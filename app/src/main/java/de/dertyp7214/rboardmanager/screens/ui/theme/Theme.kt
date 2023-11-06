@@ -15,7 +15,6 @@ import androidx.core.view.WindowCompat
 @Composable
 fun RboardManagerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     content: @Composable () -> Unit
 ) {
     val context = LocalContext.current

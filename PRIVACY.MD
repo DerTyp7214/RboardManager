@@ -1,0 +1,1 @@
+We collect google analytics data (anonymous) about device type, android version, app version and some other technical insides to improve the functionality of the app on as many different devices as possible.
