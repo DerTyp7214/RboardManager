@@ -7,7 +7,7 @@ plugins {
 val mayor = 1
 val minor = 0
 val patch = 0
-val hotfix = 1
+val hotfix = 7
 
 android {
     namespace = "de.dertyp7214.rboardmanager"
@@ -78,6 +78,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.google.play.app.update)
+    implementation(libs.google.play.app.update.ktx)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }

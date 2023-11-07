@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Rboard Manager</string>
+    <string name="update_downloaded">Update downloaded.</string>
+    <string name="update_install">Restart</string>
 </resources>
