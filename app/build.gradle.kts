@@ -4,6 +4,11 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
 }
 
+val mayor = 1
+val minor = 0
+val patch = 0
+val hotfix = 0
+
 android {
     namespace = "de.dertyp7214.rboardmanager"
     compileSdk = 34
@@ -12,8 +17,8 @@ android {
         applicationId = "de.dertyp7214.rboardmanager"
         minSdk = 33
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = mayor * 100000000 + minor * 1000000 + patch * 10000 + hotfix
+        versionName = "$mayor.$minor.$patch"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -23,7 +28,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -47,6 +52,20 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.isMinifyEnabled) {
+            variant.assembleProvider.get().doLast {
+                for (file in variant.mappingFileProvider.get().files) {
+                    copy {
+                        from(file).into("${rootDir}/proguardTools")
+                        rename { "mapping-${variant.name}.txt" }
+                    }
+                }
+            }
+        }
+        true
     }
 }
 
