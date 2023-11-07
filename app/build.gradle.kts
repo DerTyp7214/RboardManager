@@ -7,7 +7,7 @@ plugins {
 val mayor = 1
 val minor = 0
 val patch = 0
-val hotfix = 0
+val hotfix = 1
 
 android {
     namespace = "de.dertyp7214.rboardmanager"
