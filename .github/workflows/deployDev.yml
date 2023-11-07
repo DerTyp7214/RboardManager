@@ -92,4 +92,5 @@ jobs:
           releaseFiles: app/build/outputs/bundle/release/app-release-signed.aab
           mappingFile: app/build/outputs/mapping/release/mapping.txt
           track: internal
+          status: draft
           whatsNewDirectory: distribution/
