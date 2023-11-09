@@ -2,12 +2,13 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.googleAnalytics)
 }
 
 val mayor = 1
 val minor = 0
 val patch = 0
-val hotfix = 8
+val hotfix = 9
 
 android {
     namespace = "de.dertyp7214.rboardmanager"
@@ -80,6 +81,8 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.google.play.app.update)
     implementation(libs.google.play.app.update.ktx)
+    implementation(platform(libs.google.firebase.bom))
+    implementation(libs.google.firebase.analytics)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }

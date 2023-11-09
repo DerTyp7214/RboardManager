@@ -1,11 +1,13 @@
 [versions]
 agp = "8.3.0-alpha12"
 kotlin = "1.9.10"
+analytics = "4.4.0"
 coreKtx = "1.12.0"
 lifecycleRuntimeKtx = "2.6.2"
 activityCompose = "1.8.0"
 composeBom = "2023.10.01"
 playAppUpdate = "2.1.0"
+firebase = "32.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -21,8 +23,10 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 
 google-play-app-update = { group = "com.google.android.play", name = "app-update", version.ref = "playAppUpdate" }
 google-play-app-update-ktx = { group = "com.google.android.play", name = "app-update-ktx", version.ref = "playAppUpdate" }
+google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
+google-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+googleAnalytics = { id = "com.google.gms.google-services", version.ref = "analytics" }
